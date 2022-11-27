@@ -22,11 +22,12 @@
   </div>
 
   <h3><a href="/" use:link>TravelTheWorld.com</a></h3>
+  <h4><a href="/authors" use:link>Авторы</a></h4>
   <Router {routes} />
 </main>
 
 <style>
-  /*Montserrat*/
+  /*Roboto*/
   @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
   .logo {

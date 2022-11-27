@@ -8,6 +8,7 @@
     let article;
 
     blogs.forEach((blog, index) => {
+        console.log("blog", params, blog);
         if (params.title === urlSlug(blog.title)) {
             article = blog;
         }

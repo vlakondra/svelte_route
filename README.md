@@ -2,6 +2,17 @@
 
 This template should help get you started developing with Svelte in Vite.
 
+[Vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project).
+
+
+[VITE Example](https://vitejs.dev/guide/)
+
+[svelte-spa-router](https://github.com/ItalyPaleAle/svelte-spa-router).
+
+[Статья](https://blog.logrocket.com/build-spa-svelte-svelte-spa-router/)
+
+[REPL Навигация](https://svelte.dev/repl/c81d8f3dff584065a82b2d3ea7cd4aee?version=3.53.1)
+
 ## Recommended IDE Setup
 
 [VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).

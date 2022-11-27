@@ -2,6 +2,8 @@ import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 
 // from  https://github.com/stroblp/svelte-persistent-store
+// from !!! https://mattjennings.io/blog/how-to-enable-hmr-for-sveltekit-on-gitpod
+ 
 export default defineConfig({
   plugins: [svelte()],
   
