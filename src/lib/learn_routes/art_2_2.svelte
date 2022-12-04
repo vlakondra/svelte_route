@@ -2,7 +2,7 @@
     import { loremIpsum } from "lorem-ipsum";
 </script>
 
-<h2>Страница 2-2</h2>
+<h2>Раздел 2-2</h2>
 {@html loremIpsum({
     count: 15, // Number of "words", "sentences", or "paragraphs"
     format: "html", // "plain" or "html"

@@ -3,6 +3,8 @@
 
   import { location } from "svelte-spa-router";
   import Router, { link } from "svelte-spa-router";
+  import active from "svelte-spa-router/active";
+
   import PageOne from "./lib/learn_routes/page_one.svelte";
   import PageTwo from "./lib/learn_routes/page_two.svelte";
   import SubMenu_1 from "./lib/learn_routes/sub_menu_1.svelte";
@@ -46,14 +48,24 @@
   <div class="wrapper">
     <div class="box header">
       <ul>
-        <li><a href="/pageone" use:link>Страница первая</a></li>
-        <li><a href="/pagetwo" use:link>Страница вторая</a></li>
+        <li>
+          <a href="/pageone" use:link use:active={"/pageone/*"}
+            >Страница первая</a
+          >
+        </li>
+        <li>
+          <a href="/pagetwo" use:link use:active={"/pagetwo/*"}
+            >Страница вторая</a
+          >
+        </li>
         <li><a href="/pagethree" use:link>Страница третья</a></li>
       </ul>
     </div>
+
     <div class="box sidebar">
       <svelte:component this={submenu} />
     </div>
+
     <div class="box content">
       <Router {routes} />
     </div>
@@ -69,7 +81,13 @@
     text-decoration: none;
     color: #5e3b80;
   }
-
+  :global(a.active) {
+    color: #53a227;
+    font-weight: bolder;
+    border-bottom: 1px solid blue;
+    border-top: 1px solid blue;
+    padding: 2px 0;
+  }
   :global(a:hover) {
     color: aliceblue;
   }
@@ -94,7 +112,7 @@
   }
 
   .box {
-    background-color: rgb(245, 196, 196);
+    background-color: #dcd1d1; /* rgb(245, 196, 196); */
     color: rgb(91, 39, 39);
     border-radius: 5px;
     padding: 5px;
@@ -141,6 +159,6 @@
 
   .header,
   .footer {
-    background-color: #999;
+    background-color: #d7c4c4;
   }
 </style>
