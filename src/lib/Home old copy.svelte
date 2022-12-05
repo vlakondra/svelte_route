@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
     import urlSlug from "url-slug";
     import { format } from "timeago.js";
     import Card from "./Card.svelte";
@@ -16,4 +16,4 @@
         image={blog.image}
         publishDate={format(blog.publishDate)}
     />
-{/each}
+{/each} -->

@@ -22,17 +22,21 @@
     "*": NotFound,
   };
 
+  let col='1/3'
   let submenu = undefined;
   function callback(o) {
     switch ($location) {
       case "/":
         submenu = undefined;
+        col='1/3';
         break;
       case "/pageone":
+        col='2/3';
         submenu = SubMenu_1;
         break;
       case "/pagetwo":
         submenu = SubMenu_2;
+        col='2/3';
         break;
       // case '/pagethree':
       //  submenu = SubMenu_3
@@ -42,6 +46,8 @@
     }
   }
   location.subscribe(callback);
+  
+
 </script>
 
 <main>
@@ -61,12 +67,13 @@
         <li><a href="/pagethree" use:link>Страница третья</a></li>
       </ul>
     </div>
+     {#if submenu}
+        <div class="box sidebar">
+           <svelte:component this={submenu} />
+        </div> 
+    {/if}
 
-    <div class="box sidebar">
-      <svelte:component this={submenu} />
-    </div>
-
-    <div class="box content">
+    <div  style:--gridcol={col}  class="box content">
       <Router {routes} />
     </div>
     <div class="box footer">Footer</div>
@@ -74,6 +81,9 @@
 </main>
 
 <style>
+  /* .content{
+    grid-column:var(--gridcol)
+  } */
   /*Roboto*/
   @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
@@ -107,6 +117,8 @@
     grid-gap: 10px;
 
     grid-template-columns: 200px 1fr;
+    /* grid-auto-columns: 200px 1fr; */
+
     grid-template-areas:
       "header  header"
       "sidebar content"
@@ -124,7 +136,9 @@
   }
 
   .content {
-    grid-area: content;
+    /* grid-area: content; */
+    /* grid-column: 1/3; */
+    grid-column:var(--gridcol);
     text-align: left;
     padding: 0 30px;
     min-height: 500px;
