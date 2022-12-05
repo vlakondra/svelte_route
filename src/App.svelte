@@ -92,6 +92,10 @@
     color: aliceblue;
   }
 
+  :global(p) {
+    text-indent: 35px;
+  }
+
   main {
     width: 960px;
     font-family: "Montserrat", sans-serif;
