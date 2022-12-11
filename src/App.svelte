@@ -5,6 +5,8 @@
   import Router, { link } from "svelte-spa-router";
   import active from "svelte-spa-router/active";
 
+  import "bulma/css/bulma.css";
+
   import PageOne from "./lib/learn_routes/page_one.svelte";
   import PageTwo from "./lib/learn_routes/page_two.svelte";
   import SubMenu_1 from "./lib/learn_routes/sub_menu_1.svelte";
@@ -22,21 +24,21 @@
     "*": NotFound,
   };
 
-  let col='1/3'
+  let col = "1/3";
   let submenu = undefined;
   function callback(o) {
     switch ($location) {
       case "/":
         submenu = undefined;
-        col='1/3';
+        col = "1/3";
         break;
       case "/pageone":
-        col='2/3';
+        col = "2/3";
         submenu = SubMenu_1;
         break;
       case "/pagetwo":
         submenu = SubMenu_2;
-        col='2/3';
+        col = "2/3";
         break;
       // case '/pagethree':
       //  submenu = SubMenu_3
@@ -46,17 +48,14 @@
     }
   }
   location.subscribe(callback);
-  
-
 </script>
 
 <main>
   <div class="wrapper">
-    <div class="box header">
+    <div class="sbox header">
       <ul>
         <li>
-          <a href="/pageone" use:link use:active={"/pageone/*"}
-            >Страница первая</a
+          <a href="/pageone" use:link use:active={"/pageone/*"}>Директива use</a
           >
         </li>
         <li>
@@ -67,16 +66,16 @@
         <li><a href="/pagethree" use:link>Страница третья</a></li>
       </ul>
     </div>
-     {#if submenu}
-        <div class="box sidebar">
-           <svelte:component this={submenu} />
-        </div> 
+    {#if submenu}
+      <div class="sbox sidebar">
+        <svelte:component this={submenu} />
+      </div>
     {/if}
 
-    <div  style:--gridcol={col}  class="box content">
+    <div style:--gridcol={col} class="sbox content">
       <Router {routes} />
     </div>
-    <div class="box footer">Footer</div>
+    <div class="sbox footer">Footer</div>
   </div>
 </main>
 
@@ -86,6 +85,10 @@
   } */
   /*Roboto*/
   @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+  :global(.content:not(:last-child)) {
+    margin-bottom: 0;
+  }
 
   :global(a) {
     text-decoration: none;
@@ -127,18 +130,18 @@
     color: #444;
   }
 
-  .box {
+  .sbox {
     background-color: #dcd1d1; /* rgb(245, 196, 196); */
     color: rgb(91, 39, 39);
     border-radius: 5px;
-    padding: 5px;
+    /* padding: 5px; */
     font-size: 100%;
   }
 
   .content {
     /* grid-area: content; */
     /* grid-column: 1/3; */
-    grid-column:var(--gridcol);
+    grid-column: var(--gridcol);
     text-align: left;
     padding: 0 30px;
     min-height: 500px;
@@ -146,13 +149,17 @@
 
   .header {
     grid-area: header;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding-left: 30px;
   }
   .header ul {
     display: flex;
     list-style: none;
     flex-direction: row;
     justify-content: start;
-    align-items: top;
+    align-items: flex-start;
   }
   .header ul li {
     margin-right: 20px;
@@ -166,7 +173,7 @@
     grid-area: sidebar;
     display: flex;
     justify-content: center;
-    align-items: top;
+    align-items: start;
   }
   .sidebar ul li:first-child {
     margin-top: 20px;

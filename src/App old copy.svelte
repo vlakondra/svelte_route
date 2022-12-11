@@ -1,6 +1,6 @@
 <script>
   import svelteLogo from "./assets/svelte.svg";
-  import Counter from "./lib/Counter.svelte";
+  // import Counter from "./lib/Counter.svelte";
 
   import { location } from "svelte-spa-router";
   import Router, { link } from "svelte-spa-router";
@@ -21,9 +21,7 @@
   </div>
   <h1>Vite + Svelte</h1>
 
-  <div class="card">
-    <Counter />
-  </div>
+  <div class="card" />
   <h2>{$location}</h2>
   <h3><a href="/" use:link>TravelTheWorld.com</a></h3>
   <h4><a href="/authors" use:link>Авторы</a></h4>
