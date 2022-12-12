@@ -7,7 +7,7 @@
     <li>
         <a href="/pageone/input_focus" use:link use:active> Фокусирование </a>
     </li>
-    <li><a href="/pageone/solution1" use:link use:active>Решение 1</a></li>
+    <li><a href="/pageone/solution1" use:link use:active>Решение this</a></li>
     <li><a href="/pageone/solution_use" use:link use:active>Решение use</a></li>
 </ul>
 

@@ -8,4 +8,4 @@
     // console.log("Home", params.id, params);
 </script>
 
-<h1>Домашняя страница</h1>
+<h1 style="text-align:center">Домашняя страница</h1>
