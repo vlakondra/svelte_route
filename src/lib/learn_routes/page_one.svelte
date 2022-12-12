@@ -7,7 +7,7 @@
 
     // import Art_1_1 from "./art_1_1.svelte";
     // import Art_1_2 from "./art_1_2.svelte";
-    import Art_1_3 from "./art_1_3.svelte";
+    //import Art_1_3 from "./art_1_3.svelte";
 
     const routes = {
         "/input_focus": InputFocus,
